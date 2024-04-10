@@ -40,7 +40,7 @@
       <h1>EmptyHead</h1>
       <div>
       	  
-          <a href="logins" style="color: white;  text-decoration: none; margin-right: 30px;">Home</a>
+          <a href="/logins" style="color: white;  text-decoration: none; margin-right: 30px;">Home</a>
           <a href="#" style="color: white;  text-decoration: none; margin-right: 30px;" onclick="showSection('about')">About Us</a>
           <a href="#" style="color: white; text-decoration: none; margin-right: 30px;" onclick="showSection('contact')">Contact Us</a>
       </div>
@@ -186,7 +186,7 @@
             <h2 class="text-center sign-in-title">Admin Sign In</h2>
             <form action="/Admin_login" method="post">
               <div class="form-group mt-2">
-                <input type="email" class="form-control" id="adminEmail" placeholder="Username" required name="email">
+                <input type="text" class="form-control" id="adminEmail" placeholder="Username" required name="username">
               </div>
               <div class="form-group mt-2">
                 <input type="password" class="form-control" id="adminPassword" placeholder="Password" required name="password">

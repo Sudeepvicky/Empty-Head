@@ -316,6 +316,7 @@
       document.getElementById(button).disabled = false;
       console.log('password matched')
       }else{
+    	  
         console.log('inside else block') 
         if(pass == '' || confirm_pass == ''){
           console.log('inside else if block') 

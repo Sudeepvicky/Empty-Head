@@ -9,6 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
     .container {
+      background-color: white;
+      opacity: 0.99;
       max-width: 500px;
     }
     #header {
@@ -31,16 +33,23 @@
     .btn:last-child {
         margin-right: 0;
     }
+    body{
+      background-image: url('https://sharkindia.com/wp-content/uploads/2017/05/training.jpg');
+      background-repeat: no-repeat;
+      opacity: 0.922;
+      background-size: cover;
+    }
 
 
   </style>
 </head>
 <body>
-    <div id="header" class="d-flex justify-content-between align-items-center">
+<!-- <body>     -->
+  <div id="header" class="d-flex justify-content-between align-items-center">
       <h1>EmptyHead</h1>
       <div>
       	  
-          <a href="/logins" style="color: white;  text-decoration: none; margin-right: 30px;">Home</a>
+          <a href="logins" style="color: white;  text-decoration: none; margin-right: 30px;">Home</a>
           <a href="#" style="color: white;  text-decoration: none; margin-right: 30px;" onclick="showSection('about')">About Us</a>
           <a href="#" style="color: white; text-decoration: none; margin-right: 30px;" onclick="showSection('contact')">Contact Us</a>
       </div>
@@ -48,10 +57,10 @@
 
   <section id="welcome" class="text-center mt-5">
     <div>
-      <h1>Welcome to Empty Head</h1>
-      <p>Where you can learn coding</p>
-
       <div class="mt-4 container border rounded" id="signupButtons">
+        <br>
+        <h1>Welcome to Empty Head</h1>
+        <p >Where you can learn coding</p>
         <br>
         <div class="login-button-container">
           <button class="btn btn-primary mr-2"  onclick="Trainee()" >Trainee</button>
@@ -101,7 +110,7 @@
                     <input type="password" class="form-control" id="trainee_password" placeholder="Password" required name="password">
                   </div>
                   <div class="form-group mt-2">
-                    <input type="password" class="form-control" id="trainee_conpas" placeholder="Confirm Password" required name="confirm_password">
+                    <input type="password" class="form-control" id="trainee_conpas" placeholder="Confirm Password" required>
                   </div>
                   <div class="form-group mt-2" style="text-align: left;">
                     <input type="checkbox" name="trainee_confirm_password" id="trainee_confirm_password" onclick="confirm_password('trainee_password','trainee_conpas','trainee_confirm_password','trainee_passsord_msg','trainee_submit_btn')"/>
@@ -142,28 +151,29 @@
         <div id="Trainer-signup" style="display: none;"> 
           <section id="trainerSignup" class="container mt-2">
             <h2 class="text-center">Trainer Sign Up</h2>
-            <form action="/Trainer-signup" method="post">
+            <form>
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="firstname" placeholder="First Name" required name="first_name">
+                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
               </div>
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required name="last_name">
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
               </div>
               <div class="form-group mt-2">
-                <input type="date" class="form-control" id="dob" min="1950-01-01" max="2023-12-31" required name="DOB">
+                <input type="date" class="form-control" id="dob" min="1950-01-01" max="2023-12-31" required>
               </div>
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="areaOfExpertise" placeholder="Area of Expertise" required name="expertise">
+                <input type="text" class="form-control" id="areaOfExpertise" placeholder="Area of Expertise" required>
               </div>
               <div class="form-group mt-2">
-                <input type="email" class="form-control" id="email" placeholder="Email Id" required name="email">
+                <input type="email" class="form-control" id="email" placeholder="Email Id" required>
               </div>
               <div class="form-group mt-2">
-                <input type="password" class="form-control" id="tpassword" placeholder="Password" required name="password">
+                <input type="password" class="form-control" id="trainer_password" placeholder="Password" required>
               </div>
               <div class="form-group mt-2">
-                <input type="password" class="form-control" id="tconpas" placeholder="Confirm Password" required name="confirm_password">
+                <input type="password" class="form-control" id="trainer_conpas" placeholder="Confirm Password" required>
               </div>
+
               <div class="form-group mt-2" style="text-align: left;">
                 <input type="checkbox" name="trainer_confirm_password" id="trainer_confirm_password" onclick="confirm_password('trainer_password','trainer_conpas','trainer_confirm_password','trainer_passsord_msg','trainer_submit_btn')"/>
                 <label for="trainer_confirm_password">Check Password</label>
@@ -184,12 +194,12 @@
         <div id="Admin-login" style="display: none;"> 
           <section id="adminSignin" class="container mt-2">
             <h2 class="text-center sign-in-title">Admin Sign In</h2>
-            <form action="/Admin_login" method="post">
+            <form>
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="adminEmail" placeholder="Username" required name="username">
+                <input type="email" class="form-control" id="adminEmail" placeholder="Username" required>
               </div>
               <div class="form-group mt-2">
-                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required name="password">
+                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
               </div>
               <div class="login-button-container">
                 <input type="submit" class="btn btn-primary mt-2" value="Sign In">
@@ -316,7 +326,6 @@
       document.getElementById(button).disabled = false;
       console.log('password matched')
       }else{
-    	  
         console.log('inside else block') 
         if(pass == '' || confirm_pass == ''){
           console.log('inside else if block') 

@@ -151,24 +151,28 @@
         <div id="Trainer-signup" style="display: none;"> 
           <section id="trainerSignup" class="container mt-2">
             <h2 class="text-center">Trainer Sign Up</h2>
-            <form>
+            
+            <!-- form action added by siddhant on 11/4/2024
+            	 Also required name is added for all attributes -->
+            
+            <form action="/Trainer-signup" method="post">
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+                <input type="text" class="form-control" id="firstname" placeholder="First Name" required name="first_name">
               </div>
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required name="last_name">
               </div>
               <div class="form-group mt-2">
-                <input type="date" class="form-control" id="dob" min="1950-01-01" max="2023-12-31" required>
+                <input type="date" class="form-control" id="dob" min="1950-01-01" max="2023-12-31" required name="DOB">
               </div>
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="areaOfExpertise" placeholder="Area of Expertise" required>
+                <input type="text" class="form-control" id="areaOfExpertise" placeholder="Area of Expertise" required name="expertise">
               </div>
               <div class="form-group mt-2">
-                <input type="email" class="form-control" id="email" placeholder="Email Id" required>
+                <input type="email" class="form-control" id="email" placeholder="Email Id" required name="email">
               </div>
               <div class="form-group mt-2">
-                <input type="password" class="form-control" id="trainer_password" placeholder="Password" required>
+                <input type="password" class="form-control" id="trainer_password" placeholder="Password" required name="password">
               </div>
               <div class="form-group mt-2">
                 <input type="password" class="form-control" id="trainer_conpas" placeholder="Confirm Password" required>
@@ -194,12 +198,14 @@
         <div id="Admin-login" style="display: none;"> 
           <section id="adminSignin" class="container mt-2">
             <h2 class="text-center sign-in-title">Admin Sign In</h2>
-            <form>
+            <!-- changes in form tag <action,method> -->
+            <form action="/Admin_login" method="post">
               <div class="form-group mt-2">
-                <input type="email" class="form-control" id="adminEmail" placeholder="Username" required>
+              <!--  Required name added by siddhant nigade on 11/4/2024-->
+                <input type="email" class="form-control" id="adminEmail" placeholder="Username" required name="username">
               </div>
               <div class="form-group mt-2">
-                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
+                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required name="password">
               </div>
               <div class="login-button-container">
                 <input type="submit" class="btn btn-primary mt-2" value="Sign In">

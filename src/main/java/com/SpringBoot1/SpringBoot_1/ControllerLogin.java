@@ -1,5 +1,8 @@
 package com.SpringBoot1.SpringBoot_1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +18,18 @@ public class ControllerLogin {
 	@RequestMapping("/login")
 	public ModelAndView login() {
 		ModelAndView mv = new ModelAndView();
+		List<String> usernames = new ArrayList<String>();
+		usernames.add("Sudeep_v1");
+		usernames.add("Sudeep_v2");
+		usernames.add("Sudeep_v2");
+		usernames.add("Sudeep_v4");
+		usernames.add("Sudeep_v5");
+		String res = "";
+		for(String s: usernames) {
+			res += s + ",";
+		}
+		mv.addObject("trainee_usernames",res);
+		mv.addObject("trainer_usernames",res);
 		mv.setViewName("login");
 		return mv;
 	}
@@ -31,6 +46,7 @@ public class ControllerLogin {
 		boolean check = true;
 //		check = login.trainee_login(email,password);
 		if(check) {
+			mv.addObject("msg","trainee");
 			mv.addObject("email",email);
 			mv.addObject("password",password);
 			mv.setViewName("trainee");

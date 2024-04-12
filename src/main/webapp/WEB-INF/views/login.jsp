@@ -88,7 +88,7 @@
             <h2 class="text-center sign-in-title">Trainee Sign In</h2>
             <form action="/Trainee_login" method="post">
               <div class="form-group mt-2">
-                <input type="email" class="form-control" id="email" placeholder="Enter email or username" required name="email">
+                <input type="email" class="form-control" id="email" placeholder="Enter email or username" required name="trainee_login_email">
               </div>
               
               <!-- <div class="form-group mt-2">
@@ -205,7 +205,7 @@
             <h2 class="text-center sign-in-title">Trainer Sign In</h2>
             <form action="/Trainer_login" method="post"> 
               <div class="form-group mt-2">
-                <input type="email" class="form-control" id="email" placeholder="Enter email or username" required name="email">
+                <input type="email" class="form-control" id="email" placeholder="Enter email or username" required name="trainer_login_email">
               </div>
               <!-- <div class="form-group mt-2">
                 <input type="password" class="form-control" id="trainer_login_password" placeholder="Password" required name="password">
@@ -314,7 +314,7 @@
             <h2 class="text-center sign-in-title">Admin Sign In</h2>
             <form action="/Admin_login" method="post">
               <div class="form-group mt-2">
-                <input type="text" class="form-control" id="adminEmail" placeholder="Username" required name="email">
+                <input type="text" class="form-control" id="adminEmail" placeholder="Username" required name="admin_username">
               </div>
               
               

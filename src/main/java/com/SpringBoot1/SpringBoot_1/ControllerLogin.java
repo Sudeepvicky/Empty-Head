@@ -37,8 +37,8 @@ public class ControllerLogin {
 	
 	@RequestMapping("/Trainee_login")
 	public ModelAndView Trainee_login(
-			@RequestParam("email") String email,
-			@RequestParam("password") String password
+			@RequestParam("trainee_login_email") String email,
+			@RequestParam("traine_login_password") String password
 			) {
 		
 		ModelAndView mv = new ModelAndView();
@@ -46,7 +46,7 @@ public class ControllerLogin {
 		boolean check = true;
 //		check = login.trainee_login(email,password);
 		if(check) {
-			mv.addObject("msg","trainee");
+			mv.addObject("msg","Coming from trianee login page");
 			mv.addObject("email",email);
 			mv.addObject("password",password);
 			mv.setViewName("trainee");
@@ -58,8 +58,8 @@ public class ControllerLogin {
 	
 	@RequestMapping("/Trainer_login")
 	public ModelAndView Trainer_login(
-			@RequestParam("email") String email,
-			@RequestParam("password") String password
+			@RequestParam("trainer_login_email") String email,
+			@RequestParam("trainer_login_password") String password
 			) {
 		
 		ModelAndView mv = new ModelAndView();
@@ -67,6 +67,7 @@ public class ControllerLogin {
 		boolean check = true;
 //		check = login.trainer_login(email,password);
 		if(check) {
+			mv.addObject("msg","Coming from trianer login page");
 			mv.addObject("email",email);
 			mv.addObject("password",password);
 			mv.setViewName("trainer");
@@ -78,8 +79,8 @@ public class ControllerLogin {
 	
 	@RequestMapping("/Admin_login")
 	public ModelAndView Admin_login(
-			@RequestParam("username") String username,
-			@RequestParam("password") String password
+			@RequestParam("admin_username") String username,
+			@RequestParam("adminPassword") String password
 			) {
 		
 		ModelAndView mv = new ModelAndView();
@@ -87,6 +88,7 @@ public class ControllerLogin {
 		boolean check = true;
 //		check = login.admin_login(username,password);
 		if(check) {
+			mv.addObject("msg","Coming from Admin page");
 			mv.addObject("username",username);
 			mv.addObject("password",password);
 			mv.setViewName("admin");

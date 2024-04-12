@@ -2,65 +2,20 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<%-- 		<h1>--- Trainer Credentails ---</h1>
-		<h1>Email : <%=request.getAttribute("email") %></h1>
-		<h1>Password : <%=request.getAttribute("password") %></h1> --%>
-		
-		<h1>--- Trainer Credentials ---</h1>
-
-<!--below whole code is added by siddhant nigade on 11/4/2024.  -->
-
-	<%
-	if (request.getAttribute("first_name") != null) {
-	%>
-	<h2>Trainer Signup Successful</h2>
-		<p>
-		First Name:
-		<%=request.getAttribute("first_name")%>
-		</p>
-		<p>
-		Last Name:
-		<%=request.getAttribute("last_name")%>
-		</p>
-		<p>
-		DOB:
-		<%=request.getAttribute("DOB")%>
-		</p>
-		<p>
-		Expertise:
-		<%=request.getAttribute("expertise")%>
-		years
-		</p>
-		<p>
-		Email:
-		<%=request.getAttribute("email")%>
-		</p>
-		<p>
-		Password:
-		<%=request.getAttribute("password")%>
-		
-		</p>
-	<%
-	} else if (request.getAttribute("email") != null) {
-	%>
-	<h2>Trainer Login is Successful</h2>
-		<p>
-		Email:
-		<%=request.getAttribute("email")%>
-		</p>
-		<p>
-		Password:
-		<%=request.getAttribute("password")%>
-		
-		</p>
-	<%
-	}
-	%>
-<!-- till this line -->
-</body>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="card" style="width: 18rem;">
+		  <img src="https://img.pikbest.com/origin/09/20/30/73zpIkbEsTwkU.png!sw800" class="card-img-top" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title">Email : <%=request.getAttribute("email") %></h5>
+		    <h5 class="card-title">Password : <%=request.getAttribute("password") %></h5>
+		    <p class="card-text"><%=request.getAttribute("msg") %></p>
+		    <button class="btn btn-warning"><a href="/login" style="text-decoration: none;">Logout</a></button>
+		  </div>
+		</div>
+	</body>	
 </html>

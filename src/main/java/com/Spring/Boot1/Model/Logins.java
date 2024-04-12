@@ -3,27 +3,35 @@ package com.Spring.Boot1.Model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Logins implements Credentials {
     
-    public boolean insert(int id, String name, String city) {
+    public String trainee_login(String email, String password) {
         Connection connection = null;
         PreparedStatement statement = null;
+        ResultSet rs=null;
+        String res="";
         try {
             connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD);
-
-            // Prepare SQL statement for inserting user data
-            String sql = "INSERT INTO student (id, name, city) VALUES (?, ?, ?)";
-            statement = connection.prepareStatement(sql);
-            statement.setInt(1, id);
-            statement.setString(2, name);
-            statement.setString(3, city);
             
-            statement.executeUpdate();
+            // Prepare SQL statement for inserting user data
+            String sql = "select * from trainee where trainee_username = '"+ email +"' and trainee_password = '"+ password +"'";
+            statement = connection.prepareStatement(sql);
+            rs=statement.executeQuery();
+            System.out.println("line 23");
+            while(rs.next())
+            {
+            	res += (String)rs.getString("trainee_username");
+            	res += (String)rs.getString("trainee_password");
+            }
+            System.out.println(res);
+            System.out.println("line 29");
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            System.out.println("line 32");
+            return res;
         } finally {
             // Close resources
             try {
@@ -33,7 +41,8 @@ public class Logins implements Credentials {
                 e.printStackTrace();
             }
         }
-        return true;
+        System.out.println("line 43");
+        return res;
     }
     
     

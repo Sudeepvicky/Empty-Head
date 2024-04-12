@@ -5,10 +5,17 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Insert title here</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	</head>
 	<body>
-		<h1>--- Admin Credentails ---</h1>
-		<h1>Email : <%=request.getAttribute("username") %></h1>
-		<h1>Password : <%=request.getAttribute("password") %></h1>
-	</body>
+		<div class="card" style="width: 18rem;">
+		  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSokf_uG0Lt8Mnf9f8gfc0b4fAfKg69E5tM6Vc7h0eChw&s" class="card-img-top" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title">Email : <%=request.getAttribute("username") %></h5>
+		    <h5 class="card-title">Password : <%=request.getAttribute("password") %></h5>
+		    <p class="card-text"><%=request.getAttribute("msg") %></p>
+		    <button class="btn btn-warning"><a href="/login" style="text-decoration: none;">Logout</a></button>
+		  </div>
+		</div>
+	</body>	
 </html>
